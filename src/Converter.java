@@ -14,18 +14,16 @@ public class Converter {
             else System.out.println("Your number : " + Convert(decimalNumber , numberSystem));
     }
     private static String Convert(long decimalNumber , int numberSystem) {
-         int[] CS = new int[1000000000];
-        for (int i = 0; i < 1000000000; i++) {
-            CS[i] = i;
-        }
+        ///////////////////////////
         String result = "";
         if(decimalNumber > 0) {
             while (decimalNumber != 0) {
                 int n = (int) (decimalNumber % numberSystem);
-                result = CS[n] + result;
+                result = n + result;
                 decimalNumber = decimalNumber / numberSystem;
             }
             return result;
+        ///////////////////////////
         }
         else if(decimalNumber == 0){
             return "0";
@@ -33,7 +31,7 @@ public class Converter {
         else if(decimalNumber < 0){
             while (decimalNumber != 0) {
                 int n = -(int) (decimalNumber % numberSystem);
-                result = CS[n] + result;
+                result = n + result;
                 decimalNumber = decimalNumber / numberSystem;
             }
             return "-" + result;
